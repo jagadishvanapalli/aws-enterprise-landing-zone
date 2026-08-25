@@ -21,3 +21,9 @@ output "workload_ou_id" {
   value       = aws_organizations_organizational_unit.workload_ou.id
   type        = string
 }
+
+output "deny_leave_organization_policy_id" {
+  description = "ID of the Deny Leave Organization Policy"
+  value       = aws_organizations_policy.deny_leave_organization.id
+  type        = string
+}
