@@ -1,5 +1,10 @@
 resource "aws_organizations_organization" "main" {
+
   feature_set = "ALL"
+
+  enabled_policy_types = [
+    "SERVICE_CONTROL_POLICY"
+  ]
 }
 
 resource "aws_organizations_organizational_unit" "security_ou" {
@@ -33,4 +38,9 @@ resource "aws_organizations_policy" "deny_leave_organization" {
       }
     ]
   })
+}
+
+resource "aws_organizations_policy_attachment" "deny_leave_organization_attachment" {
+  policy_id = aws_organizations_policy.deny_leave_organization.id
+  target_id = aws_organizations_organization.main.roots[0].id
 }
