@@ -69,23 +69,3 @@ output "prod_route_table_association_id" {
   description = "The ID of the Prod route table association"
   value       = aws_route_table_association.prod_public.id
 }
-
-output "transit_gateway_id" {
-  description = "The ID of the Transit Gateway"
-  value       = aws_ec2_transit_gateway.main.id
-}
-
-output "dev_transit_gateway_attachment_id" {
-  description = "The ID of the Dev Transit Gateway attachment"
-  value       = aws_ec2_transit_gateway_vpc_attachment.dev.id
-}
-
-output "test_transit_gateway_attachment_id" {
-  description = "The ID of the Test Transit Gateway attachment"
-  value       = aws_ec2_transit_gateway_vpc_attachment.test.id
-}
-
-output "prod_transit_gateway_attachment_id" {
-  description = "The ID of the Prod Transit Gateway attachment"
-  value       = aws_ec2_transit_gateway_vpc_attachment.prod.id
-} 
