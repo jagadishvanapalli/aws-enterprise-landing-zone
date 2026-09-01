@@ -78,3 +78,34 @@ AWS Organization
     └── Prod
 
     -Implementation is avoided due to cost. I kept the file in disabled.
+
+    ## AWS Config Design
+
+AWS Config records configuration changes to AWS resources and evaluates resources against compliance rules.
+
+CloudTrail records API activity, while AWS Config records resource configuration state.
+
+## What AWS Config Helps Answer
+
+- What resources exist?
+- How did a resource configuration change over time?
+- Is a resource compliant with required rules?
+- Which resources are publicly exposed?
+- Which resources are missing required encryption or tagging?
+
+## Landing Zone AWS Config Pattern
+
+In a real enterprise landing zone, AWS Config is usually enabled across accounts and regions.
+
+Findings can be centralized using an AWS Config aggregator in a Security or Audit account.
+
+```text
+AWS Organization
+├── Security / Audit Account
+│   └── AWS Config Aggregator
+├── Dev Account
+│   └── AWS Config Recorder
+├── Test Account
+│   └── AWS Config Recorder
+└── Prod Account
+    └── AWS Config Recorder
