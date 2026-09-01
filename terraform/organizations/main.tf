@@ -18,7 +18,7 @@ resource "aws_organizations_organizational_unit" "infrastructure_ou" {
 }
 
 resource "aws_organizations_organizational_unit" "workload_ou" {
-  name      = "workload"
+  name      = "workload"  
   parent_id = aws_organizations_organization.main.roots[0].id
 }
 

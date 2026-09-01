@@ -4,8 +4,8 @@ variable "aws_region" {
   default     = "ap-south-2"
 }
 
-variable "profile_name" {
-  description = "The AWS profile name to use for authentication"
+variable "project" {
+  description = "The project name"
   type        = string
   default     = "aws-enterprise-landing-zone"
 }

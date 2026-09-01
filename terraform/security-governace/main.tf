@@ -1,8 +1,8 @@
 data "terraform_remote_state" "organizations" {
-    backend = "local"
-    config = {
-        path = "../organizations/terraform.tfstate"
-    }
+  backend = "local"
+  config = {
+    path = "../organizations/terraform.tfstate"
+  }
 }
 resource "aws_organizations_policy" "deny_delete_cloudtrail" {
   name        = "DenyDeleteCloudTrail"

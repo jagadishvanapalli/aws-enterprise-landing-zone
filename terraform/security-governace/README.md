@@ -76,3 +76,5 @@ AWS Organization
     ├── Dev
     ├── Test
     └── Prod
+
+    -Implementation is avoided due to cost. I kept the file in disabled.
